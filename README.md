@@ -30,40 +30,43 @@ Seluruh lembar kerja berikut telah dieksekusi penuh secara bertahap dan memperta
 | **05** | **Visualisasi Data & Narasi Storytelling**<br>• Implementasi framework narasi visual kualitatif *What? So What? Now What?* | Titanic Open Dataset | [Lihat Notebook Sesi 5](./Pertemuan5_Fajrian_Ichlasul_240401020100.ipynb) |
 | **06** | **Data Preparation & Preprocessing Pipeline**<br>• One-Hot Encoding, StandardScaler, dan Stratified Train-Test Split. | Titanic Open Dataset | [Lihat Notebook Sesi 6](./Pertemuan6_Fajrian_Ichlasul_240401020100.ipynb) |
 | **07** | **Pengantar Machine Learning: Regresi Linear**<br>• Prediksi nilai kontinu (`fare`), evaluasi metrik MAE, RMSE, $R^2$, dan Residual plot. | Titanic Open Dataset | [Lihat Notebook Sesi 7](./Pertemuan7_Fajrian_Ichlasul_240401020100.ipynb) |
+| **09** | **Algoritma Klasifikasi (Bagian 1):**<br>• Logistic Regression, Decision Trees, Confusion Matrix, Accuracy, Precision, Recall, F1-Score. | [Lihat Notebook Sesi 9](./Pertemuan9_Fajrian_Ichlasul_240401020100.ipynb) |
+| **10** | **Algoritma Klasifikasi (Bagian 2):**<br>• Metode Ensemble (Random Forest) & penanganan Imbalanced Dataset. | [Lihat Notebook Sesi 10](./Pertemuan10_Fajrian_Ichlasul_240401020100.ipynb) |
+| **11** | **Unsupervised Learning (Clustering):**<br>• K-Means, Hierarchical Clustering, Metode Elbow. | [Lihat Notebook Sesi 11](./Pertemuan11_Fajrian_Ichlasul_240401020100.ipynb) |
+| **12** | **Asosiasi Data & Sistem Rekomendasi:**<br>• Algoritma Apriori, Collaborative/Content-Based Filtering. | [Lihat Notebook Sesi 12](./Pertemuan12_Fajrian_Ichlasul_240401020100.ipynb) |
+| **13** | **Pengantar Deep Learning & NLP Dasar:**<br>• Artificial Neural Network & Analisis Sentimen Teks. | [Lihat Notebook Sesi 13](./Pertemuan13_Fajrian_Ichlasul_240401020100.ipynb) |
+
+> *Catatan: Sesi 8 adalah jadwal pelaksanaan Ujian Tengah Semester (UTS), sedangkan Sesi 14-15 berfokus pada diskusi konseptual tata kelola data sehingga tidak menyertakan file kode.*
 
 ---
 
 ## Spesifikasi Tools & Modules
 
-Eksperimen portofolio ini dikembangkan menggunakan ekosistem cloud-computing **Google Colaboratory** dengan spesifikasi infrastruktur perangkat lunak sebagai berikut:
+Eksperimen portofolio ini dikembangkan menggunakan ekosistem *cloud-computing* dengan spesifikasi infrastruktur sebagai berikut:
 
 ### 1. Perangkat Lunak Utama & Environment
-* **Runtime Jaringan**: Google Colab Virtual Machine (Ubuntu Linux Backend)
-* **Bahasa Pemrograman**: Python 3.10+
-* **Sistem Kontrol Versi**: Git & GitHub Engine
+* **Runtime Jaringan**: Google Colab Virtual Machine (tanpa instalasi lokal, mendukung akses GPU/TPU).
+* **Bahasa Pemrograman**: Python (komunitas pemrograman terbesar di dunia).
+* **Sistem Kontrol Versi**: GitHub Engine.
 
 ### 2. Pustaka Pemrosesan & Manipulasi Data (Data Wrangling)
-* **`NumPy` (v1.25+)**: Digunakan untuk operasi komputasi berbasis vektor, manipulasi array multi-dimensi, pembentukan struktur matriks, serta penanganan konversi objek kosong (`np.nan`).
-* **`Pandas` (v2.0+)**: Berperan sebagai core engine pembuatan struktur data tabular (DataFrame & Series), pembacaan file eksternal (CSV/JSON), pembersihan data duplikat, pengisian nilai kosong (`.fillna()`), korelasi matriks, dan agregasi data `.groupby()`.
+* **`NumPy`**: Digunakan untuk operasi komputasi berbasis vektor dan manipulasi array multi-dimensi.
+* **`Pandas`**: Berperan sebagai core engine pembuatan struktur data tabular (DataFrame), pembacaan file (CSV/JSON), dan penanganan nilai kosong.
 
-### 3. Pustaka Analisis Statistik & Matematika
-* **`SciPy` (Sub-modul `scipy.stats`)**: Digunakan secara khusus pada pengerjaan analisis statistika tingkat lanjut untuk mengukur derajat kecondongan kurva distribusi data (*Skewness*) dan keruncingan grafik (*Kurtosis*).
+### 3. Pustaka Analisis Statistik & Visualisasi Data
+* **`SciPy`**: Digunakan untuk mengukur *Skewness* dan *Kurtosis* pada distribusi data.
+* **`Matplotlib` & `Seaborn`**: Digunakan sebagai fondasi dasar pembuatan struktur objek grafik interaktif, seperti Heatmap, Boxplot, dan kurva distribusi.
 
-### 4. Pustaka Visualisasi Data (Data Visualization)
-* **`Matplotlib` (v3.7+)**: Digunakan sebagai fondasi dasar pembuatan struktur objek grafik (*figure* dan *axes*), bar chart dasar, pengaturan label sumbu kartesius, penentuan batas limitasi angka, serta layouting panel gambar ganda berdampingan (`plt.subplots`).
-* **`Seaborn` (v0.12+)**: Berperan dalam pembuatan plot statistik tingkat lanjut yang interaktif dan modern, meliputi kurva KDE (Kernel Density Estimate), Scatter plot korelasi sebaran titik, countplot kategori biner, Boxplot deteksi kuartil pencilan, serta Heatmap korelasi gradasi warna.
-
-### 5. Perangkat Algoritma Machine Learning
-* **`Scikit-Learn` (`sklearn`)**: Berperan penuh dalam fase pemodelan cerdas, menggunakan sub-modul:
-  * `sklearn.model_selection.train_test_split` untuk pembagian subset data latih & data uji.
-  * `sklearn.preprocessing.StandardScaler` untuk Z-score feature scaling.
-  * `sklearn.preprocessing.OneHotEncoder` untuk Categorical string binarization.
-  * `sklearn.linear_model.LinearRegression` sebagai core model algoritma regresi prediktif.
-  * `sklearn.metrics` (`mean_absolute_error`, `mean_squared_error`, `r2_score`) untuk validasi akurasi performa model.
+### 4. Perangkat Machine Learning & Kecerdasan Buatan
+* **`Scikit-Learn` (`sklearn`)**: Berperan penuh dalam fase pemodelan cerdas (Regresi, Klasifikasi Random Forest, K-Means Clustering), serta preprocessing pembagian *train-test split*.
+* **`mlxtend`**: Digunakan untuk penambangan *Association Rules* (Algoritma Apriori).
+* **`TensorFlow` & `Keras`**: Digunakan untuk membangun dan melatih arsitektur *Artificial Neural Network* (Deep Learning).
 
 ---
 
 ## Kesimpulan
-Rangkaian praktikum dari Sesi 1 hingga Sesi 7 ini memberikan pemahaman yang sangat berharga bagi saya mengenai dasar-dasar kerja seorang *Data Scientist* profesional. 
+Rangkaian praktikum dari Sesi 1 hingga Sesi 13 ini memberikan pemahaman yang sangat komprehensif bagi saya mengenai alur kerja seorang praktisi data profesional. 
 
-Melalui pembelajaran ini, saya menyadari bahwa visualisasi canggih atau algoritma Machine Learning yang rumit tidak akan memberikan hasil yang akurat tanpa didahului oleh proses pembersihan data (*Data Cleaning*) dan persiapan data (*Data Preprocessing*) yang matang. Penerapan metode pemotongan pencilan menggunakan rumus IQR Fence, penguncian distribusi target lewat *stratified split*, standardisasi skala fitur, serta analisis visual berbasis data interpretasi kualitatif (*What? So What? Now What?*) mengajarkan saya untuk tidak hanya menjadi seorang programmer yang menulis baris kode, tetapi juga menjadi seorang analis yang mampu mengekstrak nilai bermakna dari balik tumpukan data mentah. Portofolio ini menjadi pondasi dasar yang kuat bagi saya untuk melangkah ke metodologi kecerdasan buatan (*Artificial Intelligence*) yang lebih kompleks di masa mendatang.
+Melalui pembelajaran di paruh pertama, saya menyadari bahwa algoritma *Machine Learning* yang rumit tidak akan memberikan hasil akurat tanpa didahului oleh pembersihan data (*Data Cleaning*) dan persiapan data (*Data Preprocessing*). Penerapan penguncian distribusi target lewat *stratified split* dan standardisasi skala fitur mengajarkan saya untuk tidak hanya menulis baris kode, tetapi mampu mengekstrak nilai bermakna dari data mentah.
+
+Pada paruh kedua, pembelajaran bergeser ke pemahaman algoritma lanjutan. Saya belajar pentingnya pemilihan metrik evaluasi yang tepat (seperti *Recall* untuk data *Imbalanced*), bagaimana algoritma *Unsupervised* (K-Means & Apriori) mampu menemukan pola tersembunyi tanpa label target, hingga bagaimana Jaringan Saraf Tiruan (*Deep Learning*) dan ekstraksi NLP (TF-IDF) memungkinkan mesin memahami data teks yang kompleks. Portofolio ini menjadi pondasi dasar yang sangat kuat bagi saya untuk melangkah ke metodologi *Artificial Intelligence* tingkat lanjut di masa mendatang.
